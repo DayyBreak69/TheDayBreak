@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DayBreak UI Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <main class="app-shell">
+    <header class="titlebar">
+      <div class="brand">
+        <img src="assets/daybreak-logo.png" alt="DayBreak logo" class="logo">
+        <div>
+          <div class="brand-name">DAYBREAK</div>
+          <div class="brand-sub">MODULAR CONTROL HUB</div>
+        </div>
+      </div>
+      <div class="window-actions">
+        <button aria-label="Minimize">—</button>
+        <button aria-label="Close">×</button>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="sidebar">
+        <div class="side-label">MODULES</div>
+        <button class="module active" data-module="Reanimation">
+          <span class="module-icon">✦</span>
+          <span>Reanimation</span>
+        </button>
+        <button class="module" data-module="FTP">
+          <span class="module-icon">◇</span>
+          <span>FTP</span>
+        </button>
+
+        <div class="side-divider"></div>
+        <div class="side-label">SYSTEM</div>
+        <button class="module" data-module="Settings">
+          <span class="module-icon">⚙</span>
+          <span>Settings</span>
+        </button>
+
+        <div class="sidebar-footer">
+          <span class="status-dot"></span>
+          <span>DAYBREAK UI</span>
+          <span class="version">v0.1</span>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="content-head">
+          <div>
+            <div class="eyebrow">MODULE / REANIMATION</div>
+            <h1 id="moduleTitle">Reanimation</h1>
+          </div>
+          <button class="icon-button" id="themeSpark" title="Visual accent">✦</button>
+        </div>
+
+        <nav class="tabs" id="tabs">
+          <button class="tab active" data-tab="All">All</button>
+          <button class="tab" data-tab="Favs">Favs</button>
+          <button class="tab" data-tab="Binds">Binds</button>
+          <button class="tab" data-tab="Custom">Custom</button>
+          <button class="tab" data-tab="States">States</button>
+          <button class="tab" data-tab="Size">Size</button>
+        </nav>
+
+        <div class="toolbar">
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input id="search" type="search" placeholder="Search animations..." autocomplete="off">
+          </div>
+          <button class="add-button" id="addButton">+ ADD</button>
+        </div>
+
+        <div class="panel" id="panel"></div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="addDialog">
+    <form method="dialog" id="addForm" class="dialog-card">
+      <div class="dialog-kicker">CUSTOM ANIMATION</div>
+      <h2>Add animation</h2>
+      <label>
+        Name
+        <input id="animationName" required placeholder="My Animation">
+      </label>
+      <label>
+        Keyframe data
+        <textarea id="keyframeData" required placeholder="Paste keyframe data here..."></textarea>
+      </label>
+      <div class="dialog-actions">
+        <button value="cancel" class="secondary">Cancel</button>
+        <button value="save" class="primary">Save animation</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
